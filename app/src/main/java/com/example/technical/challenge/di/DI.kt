@@ -1,16 +1,17 @@
 package com.example.technical.challenge.di
 
+import android.content.Context
 import com.example.technical.challenge.data.network.NetworkService
 import com.example.technical.challenge.data.repositories.DefaultProductListingRepository
 import com.example.technical.challenge.domain.repositories.ProductListingRepository
-import com.example.technical.challenge.domain.usecase.ProductsListUseCase
-import com.example.technical.challenge.domain.usecase.ProductsListUseCaseImp
+import com.example.technical.challenge.utils.getChuckerHttpInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -25,11 +26,12 @@ class DI {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
         val okHttpBuilder = OkHttpClient.Builder()
         okHttpBuilder.readTimeout(60, TimeUnit.SECONDS)
         okHttpBuilder.connectTimeout(60, TimeUnit.SECONDS)
         okHttpBuilder.writeTimeout(60, TimeUnit.SECONDS)
+        okHttpBuilder.addInterceptor(getChuckerHttpInterceptor(context))
         return okHttpBuilder.build()
     }
 
@@ -59,18 +61,14 @@ class DI {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit) : NetworkService{
+    fun provideApiService(retrofit: Retrofit): NetworkService {
         return retrofit.create(NetworkService::class.java)
     }
 
     @Singleton
     @Provides
-    fun provideProductListingRepository(defaultProductListingRepository: DefaultProductListingRepository) : ProductListingRepository
-        = defaultProductListingRepository
+    fun provideProductListingRepository(defaultProductListingRepository: DefaultProductListingRepository): ProductListingRepository =
+        defaultProductListingRepository
 
-    @Singleton
-    @Provides
-    fun provideProductsListUseCase(productsListUseCaseImp: ProductsListUseCaseImp) : ProductsListUseCase
-            = productsListUseCaseImp
 
 }

@@ -39,7 +39,9 @@ class ProductsListFragment : Fragment() {
 
         lifecycleScope.launchWhenResumed {
             viewModel.productListResponseFlow.collect {
-
+                    closeKeyboard(binding.root)
+                    productItemAdapter.productsList = it ?: emptyList()
+                    productItemAdapter.notifyDataSetChanged()
             }
         }
 
@@ -60,15 +62,7 @@ class ProductsListFragment : Fragment() {
         binding.viewModel = viewModel
         binding.item = viewModel.searchItems
         binding.rcyViewProductsList.adapter = productItemAdapter
-        init()
     }
 
-    private fun init() {
-        viewModel.productListResponse.observe(viewLifecycleOwner) {
-            closeKeyboard(binding.root)
-            productItemAdapter.productsList = it ?: emptyList()
-            productItemAdapter.notifyDataSetChanged()
-        }
-    }
 
 }

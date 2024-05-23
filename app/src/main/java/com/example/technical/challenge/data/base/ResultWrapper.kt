@@ -7,19 +7,10 @@ package com.example.technical.challenge.data.base
  * `LiveData<Result<T>>` to pass back the latest data to the UI with its fetch status.
  */
 
+
 sealed class ResultWrapper<out T>{
     data class Success<out T>(val value: T): ResultWrapper<T>()
-    data class GenericError(val code: Int? = null, val error: ErrorResponse? = null): ResultWrapper<Nothing>()
-    object NetworkError: ResultWrapper<Nothing>()
-    // for internet connectivity disability
-    object InternetConnectionError: ResultWrapper<Nothing>()
-}
-
-
-
-sealed class ResultWrapper2<out T>{
-    data class Success<out T>(val value: T): ResultWrapper2<T>()
-    data class ERROR(val value: Errors): ResultWrapper2<Nothing>()
+    data class ERROR(val value: Errors): ResultWrapper<Nothing>()
 
 }
 

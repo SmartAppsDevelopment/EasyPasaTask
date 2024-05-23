@@ -1,9 +1,6 @@
 package com.example.technical.challenge.data.base
 
-import android.app.Application
 import android.content.Context
-import android.view.View
-import com.example.technical.challenge.R
 import com.example.technical.challenge.utils.hasInternetConnection
 import com.squareup.moshi.Moshi
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -22,27 +19,22 @@ class SafeApiCaller @Inject constructor(@ApplicationContext private val context:
         return withContext(dispatcher) {
             try {
                 ResultWrapper.Success(apiCall.invoke())
-//                val application = getApplication<Application>()
-//                if(!hasInternetConnection(application)) {
-//                    errorFieldVisibility.set(View.VISIBLE)
-//                    errorFieldString.set(application.getString(R.string.error_no_internet))
-//                    return
-//                }
-
             } catch (throwable: Throwable) {
                 when (throwable) {
-                    is IOException -> ResultWrapper.NetworkError
+                    is IOException -> ResultWrapper.ERROR(Errors.NetworkError)
+
                     is HttpException -> {
                         val code = throwable.code()
                         val errorResponse = convertErrorBody(throwable)
-                        ResultWrapper.GenericError(code, errorResponse)
+
+                        ResultWrapper.ERROR(Errors.GenericError(code, errorResponse))
                     }
+
                     else -> {
-                        ///ResultWrapper.GenericError(null, null)
                         if(hasInternetConnection(context)){
-                            ResultWrapper.InternetConnectionError
+                            ResultWrapper.ERROR(Errors.InternetConnectionError)
                         }else{
-                            ResultWrapper.InternetConnectionError
+                            ResultWrapper.ERROR(Errors.NotSure)
                         }
                     }
                 }
