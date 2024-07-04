@@ -32,7 +32,7 @@ class SplashFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         lifecycleScope.launch {
             delay(2000)
-            findNavController().navigate(R.id.action_splash_to_products_list)
+            findNavController().navigate(R.id.action_splash_fragment_to_helpSupportFragment)
         }
     }
 

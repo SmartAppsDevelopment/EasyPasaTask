@@ -13,5 +13,7 @@
     <string name="error_maker_length">Maker length should be greater than 1 or less than 40 character.</string>
     <string name="error_model_length">Model length should be greater than 1 or less than 40 character.</string>
     <string name="error_year_selection">Year should not be greater than current year.</string>
+    <string name="please_select_from_one_of_the_options_below">Please select from one of the options below</string>
+    <string name="text_hint">Your complaint will be resolved in 24 hours You can also track your complaint from the main help menu or tap Track my complaint below</string>
 
 </resources>

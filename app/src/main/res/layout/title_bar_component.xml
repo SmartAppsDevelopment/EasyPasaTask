@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="@dimen/_7sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@drawable/arrow_right"
+            android:rotation="180"
+            android:layout_marginStart="@dimen/margin_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginVertical="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ref_view"
+            tools:text="Help &amp; Customer Support"
+            android:textSize="@dimen/_15ssp"
+            android:includeFontPadding="false"
+            android:textAppearance="@style/weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <View
+            android:id="@+id/ref_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/border_coolor" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

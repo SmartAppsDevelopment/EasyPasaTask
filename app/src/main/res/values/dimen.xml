@@ -1,4 +1,9 @@
 <resources>
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_5">5dp</dimen>
+
+
+    <dimen name="margin_right">@dimen/_20sdp</dimen>
+    <dimen name="margin_left">@dimen/_20sdp</dimen>
+    <dimen name="margin_half">@dimen/_10sdp</dimen>
 </resources>

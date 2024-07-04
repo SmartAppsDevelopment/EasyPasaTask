@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_quick_help"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ref_view"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/_24sdp"
+            android:src="@drawable/quick_help" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            app:layout_constraintStart_toEndOf="@id/iv_quick_help"
+            app:layout_constraintTop_toTopOf="@id/iv_quick_help"
+            app:layout_constraintBottom_toBottomOf="@id/iv_quick_help"
+            tools:text="Register Complaint"
+            android:textSize="@dimen/_13ssp"
+            android:textAppearance="@style/weight500"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_22sdp"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:src="@drawable/arrow_right"
+            android:layout_marginEnd="@dimen/_3sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_quick_help"
+            app:layout_constraintBottom_toBottomOf="@id/iv_quick_help" />
+
+        <View
+            android:id="@+id/ref_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/border_coolor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

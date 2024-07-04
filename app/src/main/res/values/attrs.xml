@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditText">
+        <attr name="edtTextType" format="enum">
+            <enum name="edtText" value="0" />
+            <enum name="edtTextDropDown" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

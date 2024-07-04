@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@drawable/rounded_bottom_sheet_background">
+
+        <TextView
+            android:id="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Register Complaint"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:textSize="@dimen/_18ssp"
+            android:textAppearance="@style/weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/ivtikicon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_23sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:src="@drawable/tik_icon"/>
+
+        <TextView
+            android:id="@+id/tv_titlecomplainnbr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivtikicon"
+            android:text="Your Complaint Number is"
+            android:layout_marginTop="@dimen/_16ssp"
+            android:textSize="@dimen/_15ssp"
+            android:textAppearance="@style/weight400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvnumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titlecomplainnbr"
+            android:text="123-456-890"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textSize="@dimen/_16ssp"
+            android:textAppearance="@style/weight600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_titlehint"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvnumber"
+            android:text="@string/text_hint"
+            android:layout_marginTop="@dimen/_16ssp"
+            android:textSize="@dimen/_14ssp"
+            android:textAppearance="@style/weight400"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#616161" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_track_my_complaint"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:backgroundTint="#00BC5F"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            android:text="Track my Complaint"
+            android:textAppearance="@style/weight600"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="65dp"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titlehint" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_backhome"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:backgroundTint="@color/white"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            android:text="Back Home"
+            android:textAppearance="@style/weight600"
+            android:textColor="#00BC5F"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="65dp"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_track_my_complaint"
+            app:strokeColor="#00BC5F"
+            app:strokeWidth="@dimen/_1sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

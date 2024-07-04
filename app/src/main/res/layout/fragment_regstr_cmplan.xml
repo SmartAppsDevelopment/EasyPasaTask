@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_left" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_left" />
+
+        <include
+            android:id="@+id/include_toolbar_layout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/title_bar_component" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/include_toolbar_layout"
+            android:text="Select your issue from the list below"
+            android:textSize="@dimen/_17ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textAppearance="@style/weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/guide_left"
+            app:layout_constraintEnd_toEndOf="@id/guide_right">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:flow_wrapMode="chain"
+                    app:flow_maxElementsWrap="1"
+                    app:constraint_referenced_ids="include_menu_moneytransfer,include_menu_easyload
+,include_menu_pckg,include_menu_miniapp,include_menu_acc_relate"
+
+                    />
+
+                <include
+                    android:id="@+id/include_menu_moneytransfer"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    layout="@layout/new_complain_ui_menu_item" />
+
+                <include
+                    android:id="@+id/include_menu_easyload"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    layout="@layout/new_complain_ui_menu_item" />
+
+                <include
+                    android:id="@+id/include_menu_pckg"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    layout="@layout/new_complain_ui_menu_item" />
+
+                <include
+                    android:id="@+id/include_menu_miniapp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    layout="@layout/new_complain_ui_menu_item" />
+
+                <include
+                    android:id="@+id/include_menu_acc_relate"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    layout="@layout/new_complain_ui_menu_item" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

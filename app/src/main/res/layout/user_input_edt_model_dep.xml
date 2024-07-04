@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="What was the problem?"
+            android:textSize="@dimen/_10ssp"
+            android:textAppearance="@style/weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            app:strokeColor="@android:color/transparent"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/menu"
+
+                android:background="@android:color/transparent"
+                app:backgroundTint="@android:color/transparent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:hintAnimationEnabled="false"
+                app:boxStrokeColor="@color/mtrl_filled_stroke_color"
+                app:boxStrokeWidthFocused="1dp"
+                app:boxStrokeWidth="1dp"
+                app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+                app:boxCornerRadiusTopStart="@dimen/_8sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+                app:hintEnabled="false"
+                app:endIconMode="none"
+                app:endIconTint="@color/black"
+                android:hint="Label">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:hint="Add Comments"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_16sdp"
+                android:translationZ="@dimen/_16sdp"
+                android:background="#21B25F"
+                app:layout_constraintTop_toTopOf="@id/menu"
+                app:layout_constraintBottom_toBottomOf="@id/menu"
+                app:layout_constraintStart_toStartOf="@id/menu"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
