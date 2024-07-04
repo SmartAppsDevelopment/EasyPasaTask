@@ -35,6 +35,4 @@ Dagger-Hilt
 
 
 
-# Data Flow diagram in MVVM + Clean Architecture
-![MVVM + Clean](https://user-images.githubusercontent.com/12691162/159556895-b186dac0-7f30-499a-831c-1f3fbf7ce220.png)
 
