@@ -9,7 +9,10 @@ import com.example.technical.challenge.databinding.HelpSupportUiMenuItemBinding
  * Created 14/06/2024 at 1:46 pm
  */
 object SupportMenuItemsComponent {
-     fun inflateQuickHelpMenu(helpSupportUiMenuItemBinding: HelpSupportUiMenuItemBinding,onclick:(View)->Unit) {
+
+    val newIconItem= fun () =listOf(R.drawable.track,R.drawable.newicon,R.drawable.faqicon,R.drawable.tutorial,R.drawable.quick_help).random()
+
+    fun inflateQuickHelpMenu(helpSupportUiMenuItemBinding: HelpSupportUiMenuItemBinding,onclick:(View)->Unit) {
         helpSupportUiMenuItemBinding.ivQuickHelp.
         setImageResource(R.drawable.quick_help)
         helpSupportUiMenuItemBinding.tvTitle.text = "Quick Help"

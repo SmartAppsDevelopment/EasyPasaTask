@@ -27,120 +27,68 @@
 
         <include
             android:id="@+id/include_toolbar_layout"
-            android:layout_height="wrap_content"
+            layout="@layout/title_bar_component"
             android:layout_width="match_parent"
-            layout="@layout/title_bar_component" />
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:id="@+id/iv_hadsetlogo"
             android:layout_width="@dimen/_83sdp"
             android:layout_height="@dimen/_83sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            app:layout_constraintTop_toBottomOf="@id/include_toolbar_layout"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/head_set"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/head_set" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/include_toolbar_layout" />
 
         <TextView
             android:id="@+id/tv_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_hadsetlogo"
-            android:text="Tell us how we can help"
-            android:textSize="@dimen/_18ssp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:textAppearance="@style/weight500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black" />
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Tell us how we can help"
+            android:textAppearance="@style/weight500"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_hadsetlogo" />
 
         <TextView
             android:id="@+id/tv_subtitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
-            android:text="@string/please_select_from_one_of_the_options_below"
-            android:textSize="@dimen/_13ssp"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:textAppearance="@style/weight400"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#4A4850" />
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="@string/please_select_from_one_of_the_options_below"
+            android:textAppearance="@style/weight400"
+            android:textColor="#4A4850"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
 
         <include
             android:id="@+id/include_search_layout"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:layout_height="wrap_content"
+            layout="@layout/search_bar_component"
             android:layout_width="0dp"
-            app:layout_constraintStart_toStartOf="@id/guide_left"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@id/guide_right"
-            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
-            layout="@layout/search_bar_component" />
+            app:layout_constraintStart_toStartOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_menu_list_item"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/include_search_layout"
+            app:layout_constraintEnd_toEndOf="@id/guide_right"
             app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintEnd_toEndOf="@id/guide_right">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.helper.widget.Flow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:flow_wrapMode="chain"
-                    app:flow_maxElementsWrap="1"
-                    app:constraint_referenced_ids="include_menu_quick_help_layout,include_menu_register_complaint_layout,include_menu_track_complaint_layout,include_menu_faqs_layout,include_menu_tutorial_layout"
-
-                    />
-
-                <include
-                    android:id="@+id/include_menu_quick_help_layout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/help_support_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_register_complaint_layout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/help_support_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_track_complaint_layout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/help_support_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_faqs_layout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/help_support_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_tutorial_layout"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/help_support_ui_menu_item" />
-
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </ScrollView>
+            app:layout_constraintTop_toBottomOf="@id/include_search_layout"
+            tools:listitem="@layout/help_support_ui_menu_item" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

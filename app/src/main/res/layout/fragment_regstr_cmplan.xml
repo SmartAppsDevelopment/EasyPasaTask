@@ -27,86 +27,32 @@
 
         <include
             android:id="@+id/include_toolbar_layout"
-            android:layout_height="wrap_content"
+            layout="@layout/title_bar_component"
             android:layout_width="match_parent"
-            layout="@layout/title_bar_component" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tv_title"
-            app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintTop_toBottomOf="@id/include_toolbar_layout"
-            android:text="Select your issue from the list below"
-            android:textSize="@dimen/_17ssp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:textAppearance="@style/weight500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black" />
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Select your issue from the list below"
+            android:textAppearance="@style/weight500"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintStart_toStartOf="@id/guide_left"
+            app:layout_constraintTop_toBottomOf="@id/include_toolbar_layout" />
 
-
-
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_menu_list_item"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="@id/guide_right"
             app:layout_constraintStart_toStartOf="@id/guide_left"
-            app:layout_constraintEnd_toEndOf="@id/guide_right">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.helper.widget.Flow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:flow_wrapMode="chain"
-                    app:flow_maxElementsWrap="1"
-                    app:constraint_referenced_ids="include_menu_moneytransfer,include_menu_easyload
-,include_menu_pckg,include_menu_miniapp,include_menu_acc_relate"
-
-                    />
-
-                <include
-                    android:id="@+id/include_menu_moneytransfer"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/new_complain_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_easyload"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/new_complain_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_pckg"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/new_complain_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_miniapp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/new_complain_ui_menu_item" />
-
-                <include
-                    android:id="@+id/include_menu_acc_relate"
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    layout="@layout/new_complain_ui_menu_item" />
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </ScrollView>
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:listitem="@layout/new_complain_ui_menu_item" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

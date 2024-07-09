@@ -11,9 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.technical.challenge.R
-import com.example.technical.challenge.databinding.FragmentRegstrCmplanBinding
 import com.example.technical.challenge.databinding.FragmentRegstrCmplanTypeBinding
-import com.example.technical.challenge.presentation.components.SupportMenuItemsComponent
 import com.example.technical.challenge.presentation.helpsupoort.CustomAdapter
 import com.example.technical.challenge.utils.CustomBottomSheetDialogFragment
 import com.example.technical.challenge.utils.getListOfIssue
@@ -26,7 +24,6 @@ import com.example.technical.challenge.utils.getListOfMoneyTransfer
 class RegisterComplainTypeFragment : Fragment() {
 
 
-
     private lateinit var binding: FragmentRegstrCmplanTypeBinding
 
     override fun onCreateView(
@@ -37,30 +34,34 @@ class RegisterComplainTypeFragment : Fragment() {
         binding =
 
 
-
-            DataBindingUtil.inflate(inflater, R.layout.fragment_regstr_cmplan_type, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_regstr_cmplan_type,
+                container,
+                false
+            )
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-                     super.onViewCreated(view, savedInstanceState)
+        super.onViewCreated(view, savedInstanceState)
 
-        with(binding.includeTypeDropdown){
-            autocomtextview.setAdapter(CustomAdapter(requireContext(),getListOfMoneyTransfer))
+        with(binding.includeTypeDropdown) {
+            autocomtextview.setAdapter(CustomAdapter(requireContext(), getListOfMoneyTransfer))
             autocomtextview.setOnItemClickListener { adapterView, view, i, l ->
-                Log.e("autocomtextview", "setOnItemClickListener: ", )
-                binding.includeIssueDropdown.root.isVisible=true
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownclose)
+                Log.e("autocomtextview", "setOnItemClickListener: ")
+                binding.includeIssueDropdown.root.isVisible = true
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownclose)
             }
-            tvTitle.text="Type of Money Transfer"
-            autocomtextview.hint="Input Type"
+            tvTitle.text = "Type of Money Transfer"
+            autocomtextview.hint = "Input Type"
             autocomtextview.setOnDismissListener {
-                Log.e("autocomtextview", "setOnDismissListener: ", )
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownclose)
+                Log.e("autocomtextview", "setOnDismissListener: ")
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownclose)
             }
             autocomtextview.setOnClickListener {
-                Log.e("autocomtextview", "setOnClickListener: ", )
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownopen)
+                Log.e("autocomtextview", "setOnClickListener: ")
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownopen)
             }
             menu.setEndIconOnClickListener {
                 if (autocomtextview.isPopupShowing) {
@@ -71,21 +72,21 @@ class RegisterComplainTypeFragment : Fragment() {
             }
         }
 
-        with(binding.includeIssueDropdown){
+        with(binding.includeIssueDropdown) {
             autocomtextview.setAdapter(CustomAdapter(requireContext(), getListOfIssue))
-            tvTitle.text="Select Issue"
-            autocomtextview.hint="Input Text"
+            tvTitle.text = "Select Issue"
+            autocomtextview.hint = "Input Text"
             autocomtextview.setOnItemClickListener { adapterView, view, i, l ->
-                binding.includeAddComments.root.isVisible=true
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownclose)
+                binding.includeAddComments.root.isVisible = true
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownclose)
             }
             autocomtextview.setOnDismissListener {
-                Log.e("autocomtextview", "setOnDismissListener: ", )
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownclose)
+                Log.e("autocomtextview", "setOnDismissListener: ")
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownclose)
             }
             autocomtextview.setOnClickListener {
-                Log.e("autocomtextview", "setOnClickListener: ", )
-                menu.endIconDrawable = getDrawable(requireContext(),R.drawable.dropdownopen)
+                Log.e("autocomtextview", "setOnClickListener: ")
+                menu.endIconDrawable = getDrawable(requireContext(), R.drawable.dropdownopen)
             }
             menu.setEndIconOnClickListener {
                 if (autocomtextview.isPopupShowing) {
@@ -96,11 +97,11 @@ class RegisterComplainTypeFragment : Fragment() {
             }
         }
 
-        with(binding.includeAddComments){
-            tvTitle.text="What was the problem?"
+        with(binding.includeAddComments) {
+            tvTitle.text = "What was the problem?"
         }
 
-        binding.includeToolbarLayout.tvTitle.text="Register New Complaint"
+        binding.includeToolbarLayout.tvTitle.text = "Register New Complaint"
         binding.includeToolbarLayout.ivArrow.setOnClickListener { findNavController().navigateUp() }
 
         binding.btnRegisterComplaint.setOnClickListener {

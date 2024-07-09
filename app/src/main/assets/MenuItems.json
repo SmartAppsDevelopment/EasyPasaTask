@@ -1,0 +1,134 @@
+{
+  "body" : [
+    {
+      "nameUrdu" : "اکاؤنٹ سے متعلق",
+      "id" : 2,
+      "categories" : [
+        {
+          "id" : 1,
+          "categoryNameUrdu" : "اکاؤنٹ پروفائل",
+          "categoryName" : "Account Profile",
+          "triggers" : "Account Related_Click"
+        }
+      ],
+      "name" : "Account Related",
+      "triggers" : "Account Related_Click"
+    },
+    {
+      "nameUrdu" : "رقم کی منتقلی",
+      "id" : 3,
+      "categories" : [
+        {
+          "id" : 2,
+          "categoryNameUrdu" : "بینک ٹرانسفر",
+          "categoryName" : "Bank Transfer",
+          "triggers" : "Money Transfer_Click"
+        },
+        {
+          "id" : 3,
+          "categoryNameUrdu" : "راسٹ ٹرانسفر",
+          "categoryName" : "Raast Transfer",
+          "triggers" : "Money Transfer_Click"
+        },
+        {
+          "id" : 4,
+          "categoryNameUrdu" : "ایزی پیسہ سے ایزی پیسہ ٹرانسفر",
+          "categoryName" : "Easypaisa Transfer",
+          "triggers" : "Money Transfer_Click"
+        }
+      ],
+      "name" : "Money Transfer",
+      "triggers" : "Money Transfer_Click"
+    },
+    {
+      "nameUrdu" : "ایزی لوڈ",
+      "id" : 4,
+      "categories" : [
+        {
+          "id" : 5,
+          "categoryNameUrdu" : "پری پیڈ",
+          "categoryName" : "Prepaid",
+          "triggers" : "Easyload_Click"
+        }
+      ],
+      "name" : "Easyload",
+      "triggers" : "Easyload_Click"
+    },
+    {
+      "nameUrdu" : "موبائل پیکیج",
+      "id" : 5,
+      "categories" : [
+        {
+          "id" : 6,
+          "categoryNameUrdu" : "پری پیڈ",
+          "categoryName" : "Prepaid",
+          "triggers" : "Mobile Package_Click"
+        }
+      ],
+      "name" : "Mobile Package",
+      "triggers" : "Mobile Package_Click"
+    },
+    {
+      "nameUrdu" : "قرضہ",
+      "id" : 6,
+      "categories" : [
+        {
+          "id" : 7,
+          "categoryNameUrdu" : "قرض کی معلومات کی تازہ کاری",
+          "categoryName" : "Loan Info Update",
+          "triggers" : "Loan_Click"
+        },
+        {
+          "id" : 8,
+          "categoryNameUrdu" : "قرضہ نہیں ملا",
+          "categoryName" : "Loan Not Received",
+          "triggers" : "Loan_Click"
+        },
+        {
+          "id" : 9,
+          "categoryNameUrdu" : "قرض کی واپسی کا مسئلہ",
+          "categoryName" : "Loan Repayment Issue",
+          "triggers" : "Loan_Click"
+        },
+        {
+          "id" : 10,
+          "categoryNameUrdu" : "قرض کی خدمات میں مسلہ",
+          "categoryName" : "Loan Service Issue",
+          "triggers" : "Loan_Click"
+        }
+      ],
+      "name" : "Loan",
+      "triggers" : "Loan_Click"
+    },
+    {
+      "nameUrdu" : "ادائیگیاں",
+      "id" : 7,
+      "categories" : [
+        {
+          "id" : 11,
+          "categoryNameUrdu" : "بل کی ادائیگی",
+          "categoryName" : "Bill payment",
+          "triggers" : "Payments_Click"
+        }
+      ],
+      "name" : "Payments",
+      "triggers" : "Payments_Click"
+    }
+  ],
+  "business" : "cmm-api",
+  "loginName" : null,
+  "clientIp" : "101.50.71.7",
+  "channel" : null,
+  "routeInfo" : "CMM",
+  "uri" : "\/cmm\/cxtemplates\/types\/findAll",
+  "accDate" : null,
+  "source" : null,
+  "locale" : "en_US",
+  "userId" : null,
+  "msgInfo" : null,
+  "token" : null,
+  "msgCd" : "CMM00000",
+  "requestId" : "AGW2407051352000021652387",
+  "msgId" : "CMM2407051352360387828493",
+  "startDateTime" : "2024-07-05T13:52:36.912"
+}

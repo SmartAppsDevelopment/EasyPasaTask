@@ -10,6 +10,9 @@ import android.view.inputmethod.InputMethodManager
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
+import com.google.gson.Gson
+import java.io.IOException
+import java.io.InputStream
 
 fun closeKeyboard(view: View?) {
     view?.let {
@@ -78,4 +81,21 @@ fun getChuckerHttpInterceptor(context: Context): ChuckerInterceptor {
         //    .createShortcut(true)
         .build()
 
+}
+
+fun Context.getDataFromAssets(fileName: String):String?{
+
+    var jsonString: String? = null
+    try {
+        val inputStream: InputStream = assets.open(fileName)
+        jsonString = inputStream.bufferedReader().use { it.readText() }
+    } catch (ioException: IOException) {
+        ioException.printStackTrace()
+    }
+    return jsonString
+}
+
+inline fun <reified T> String.convertStringToClass():T?{
+    val json= Gson().fromJson(this, T::class.java)
+    return json
 }

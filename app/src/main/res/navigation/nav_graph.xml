@@ -47,6 +47,9 @@
             app:exitAnim="@anim/exit_to_left"
             app:popEnterAnim="@anim/enter_from_left"
             app:popExitAnim="@anim/exit_to_right"/>
+        <argument
+            android:name="bodyobj"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registerComplainTypeFragment"
